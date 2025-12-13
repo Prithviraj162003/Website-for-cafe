@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolhapur Jaggery Tea</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Kolhapuri Jaggery Tea Cafe</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="javascript:void(0)" id="cartLink">Cart <span id="cartCount">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <br>
+    <div>
+        <img src="poster.jpg" alt="Kolhapur Jaggery Tea Poster" width="100%" height="300px">
+    </div>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Welcome to Kolhapuri Jaggery Tea Cafe</h2>
+            <p>Crafted with care, sweetened with authentic Kolhapuri Jaggery Tasty Tea!!</p>
+            <br><br>
+            <a href="menu.html" class="cta-button">Explore Our Menu</a>
+        </div>
+    </section>
+    <br>
+    <br>
+    
+    <section id="menu" class="menu">
+        <h2>Our Main Menu</h2>
+        <div class="menu-items">
+            <div class="menu-item" onclick="openModal('Tea', '₹ 10', 'tea.jpg')">
+                <img src="tea.jpg" alt="Tea">
+                <h3>Tea</h3>
+                <span>₹ 10</span>
+            </div>
+            <div class="menu-item" onclick="openModal('Coffee', '₹ 15', 'coffee.jpg')">
+                <img src="coffee.jpg" alt="Coffee">
+                <h3>Coffee</h3>
+                <span>₹ 15</span>
+            </div>
+            <div class="menu-item" onclick="openModal('Cold Coffee', '₹ 40', 'coldcoffee.jpg')">
+                <img src="coldcoffee.jpg" alt="Cold Coffee">
+                <h3>Cold Coffee</h3>
+                <span>₹ 40</span>
+            </div>
+            <div class="menu-item" onclick="openModal('Lemon Tea', '₹ 15', 'lemontea.jpg')">
+                <img src="lemontea.jpg" alt="Lemon Tea">
+                <br>
+                <h3>Lemon Tea</h3>
+                <br>
+                <br>
+                <span>₹ 15</span>
+            </div>
+            <div class="menu-item" onclick="openModal('Cold Lemon Tea', '₹ 20', 'coldlemontea.jpg')">
+                <img src="coldlemontea.jpg" alt="Cold Lemon Tea">
+                <h3>Cold Lemon Tea</h3>
+                <br>
+                <span>₹ 20</span>
+            </div>
+            <div class="menu-item" onclick="openModal('Cream Roll', '₹ 10', 'creamroll.jpg')">
+                <img src="creamroll.jpg" alt="Cream Roll">
+                <h3>Cream Roll</h3><br>
+                <span>₹ 10</span>
+            </div>
+            <div class="menu-item" onclick="openModal('Cookies', '₹ 5', 'cookies.jpg')">
+                <img src="cookies.jpg" alt="Cookies">
+                <h3>Cookies</h3>
+                <span>₹ 5</span>
+            </div>
+            <div class="menu-item" onclick="openModal('Jaggery Candy (500g)', '₹ 100', 'candy.jpg')">
+                <img src="candy.jpg" alt="Jaggery Candy">
+                <h3>Jaggery Candy (500g)</h3>
+                <span>₹ 100</span>
+            </div>
+            <div class="menu-item" onclick="openModal('Jaggery Penti (1Kg)', '₹ 80', 'penti.jpg')">
+                <img src="penti.jpg" alt="Jaggery Penti">
+                <h3>Jaggery Penti (1Kg)</h3>
+                <span>₹ 80</span>
+            </div>
+            <div class="menu-item" onclick="openModal('Jaggery Powder (500g)', '₹ 80', 'powder.jpg')">
+                <img src="powder.jpg" alt="Jaggery Powder">
+                <h3>Jaggery Powder (500g)</h3>
+                <span>₹ 80</span>
+            </div>
+            <div class="menu-item" onclick="openModal('Liquid Jaggery (500g)', '₹ 120', 'liquid.jpg')">
+                <img src="liquid.jpg" alt="Liquid Jaggery">
+                <h3>Liquid Jaggery (500g)</h3>
+                <span>₹ 120</span>
+            </div>
+            <div class="menu-item" onclick="openModal('Mineral Water', '₹ 20', 'water.jpg')">
+                <img src="water.jpg" alt="Mineral Water">
+                <h3>Mineral Water</h3>
+                <span>₹ 20</span>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <h1 id="des">About Us</h1>
+    <br><br>
+    <div id="about" class="about1">
+        <p>Kolhapur Jaggery Tea is a traditional, rich, and sweet tea prepared using jaggery instead of refined sugar. A perfect blend of spices and sweetness, this tea is a favorite among locals in Kolhapur, Maharashtra. It’s made with the finest jaggery sourced directly from Kolhapur, giving it a rich caramel-like flavor.</p>
+    </div>
+
+    
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p class="hero1">Have any questions or want to place an order? Reach out to us!</p>
+        <form action="submit_form.php" method="POST" id="contactForm">
+            <input type="text" placeholder="Your Name" name="name" required>
+            <input type="email" placeholder="Your Email" name="email" required>
+            <textarea placeholder="Your Message" name="message" required></textarea>
+            <button type="submit" class="submit-button">Send Message</button>
+        </form>
+    </section>
+  
+    <div id="menuModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle">Item Title</h2>
+            <p id="modalPrice">₹0</p>
+            <img id="modalImage" src="" alt="Item Image">
+        </div>
+    </div>
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCart()">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cartItems"></div>
+            <h3>Total: ₹<span id="totalPrice">0</span></h3>
+            <button onclick="checkout()" class="cta-button">Checkout</button>
+        </div>
+    </div>
+
+    <div class="review">
+        <h1 style="color: rgb(7, 239, 42);">Please give your Valuable feedback by Clicking here!!</h1>
+    <a href="https://forms.gle/3NcYyog25mZEPXLM7"><img src="reviews.jpg" alt="Review -Image"></a>
+</div>
+    <footer>
+        <p>&copy; 2024 Kolhapur Jaggery Tea | All Rights Reserved</p>
+    </footer>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

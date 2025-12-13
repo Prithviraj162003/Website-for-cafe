@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="menu" class="menu">
+        <h2>Our Main Menu</h2>
+        <div class="menu-items">
+            <div class="menu-item" onclick="openModal('Tea', '₹ 10', 'tea.jpg')">
+                <img src="tea.jpg" alt="Tea">
+                <h3>Tea</h3>
+                <span>₹ 10</span>
+            </div>
+            <div class="menu-item" onclick="openModal('Coffee', '₹ 15', 'coffee.jpg')">
+                <img src="coffee.jpg" alt="Coffee">
+                <h3>Coffee</h3>
+                <span>₹ 15</span>
+            </div>
+            <div class="menu-item" onclick="openModal('Cold Coffee', '₹ 40', 'coldcoffee.jpg')">
+                <img src="coldcoffee.jpg" alt="Cold Coffee">
+                <h3>Cold Coffee</h3>
+                <span>₹ 40</span>
+            </div>
+            <div class="menu-item" onclick="openModal('Lemon Tea', '₹ 15', 'lemontea.jpg')">
+                <img src="lemontea.jpg" alt="Lemon Tea">
+                <h3>Lemon Tea</h3><br>
+                <span>₹ 15</span>
+            </div>
+            <div class="menu-item" onclick="openModal('Cold Lemon Tea', '₹ 20', 'coldlemontea.jpg')">
+                <img src="coldlemontea.jpg" alt="Cold Lemon Tea">
+                <h3>Cold Lemon Tea</h3><br>
+                <span>₹ 20</span>
+            </div>
+            <div class="menu-item" onclick="openModal('Cream Roll', '₹ 10', 'creamroll.jpg')">
+                <img src="creamroll.jpg" alt="Cream Roll">
+                <h3>Cream Roll</h3>
+                <span>₹ 10</span>
+            </div>
+            <div class="menu-item" onclick="openModal('Cookies', '₹ 5', 'cookies.jpg')">
+                <img src="cookies.jpg" alt="Cookies">
+                <h3>Cookies</h3>
+                <span>₹ 5</span>
+            </div>
+            <div class="menu-item" onclick="openModal('Jaggery Candy (500g)', '₹ 100', 'candy.jpg')">
+                <img src="candy.jpg" alt="Jaggery Candy">
+                <h3>Jaggery Candy (500g)</h3>
+                <span>₹ 100</span>
+            </div>
+            <div class="menu-item" onclick="openModal('Jaggery Penti (1Kg)', '₹ 80', 'penti.jpg')">
+                <img src="penti.jpg" alt="Jaggery Penti">
+                <h3>Jaggery Penti (1Kg)</h3>
+                <span>₹ 80</span>
+            </div>
+            <div class="menu-item" onclick="openModal('Jaggery Powder (500g)', '₹ 80', 'powder.jpg')">
+                <img src="powder.jpg" alt="Jaggery Powder">
+                <h3>Jaggery Powder (500g)</h3>
+                <span>₹ 80</span>
+            </div>
+            <div class="menu-item" onclick="openModal('Liquid Jaggery (500g)', '₹ 120', 'liquid.jpg')">
+                <img src="liquid.jpg" alt="Liquid Jaggery">
+                <h3>Liquid Jaggery (500g)</h3>
+                <span>₹ 120</span>
+            </div>
+            <div class="menu-item" onclick="openModal('Mineral Water', '₹ 20', 'water.jpg')">
+                <img src="water.jpg" alt="Mineral Water">
+                <h3>Mineral Water</h3>
+                <span>₹ 20</span>
+            </div>
+        </div>
+    </section>
+    <section id="menu" class="menu">
+        <h2>Snacks and Beverages</h2>
+        <div class="menu-items">
+            <div class="menu-item" onclick="openModal('Tea', '₹ 10', 'tea.jpg')">
+                <img src="biscuits.jpg" alt="Tea">
+                <h3>Biscuits</h3>
+            </div>
+            <div class="menu-item" onclick="openModal('Coffee', '₹ 15', 'coffee.jpg')">
+                <img src="choclates.jpg" alt="Coffee">
+                <h3>Choclates</h3>
+            </div>
+            <div class="menu-item" onclick="openModal('Cold Coffee', '₹ 40', 'coldcoffee.jpg')">
+                <img src="icecream.jpg" alt="Cold Coffee">
+                <h3>Ice Cream</h3>
+            </div>
+            <div class="menu-item" onclick="openModal('Lemon Tea', '₹ 15', 'lemontea.jpg')">
+                <img src="softdrinks.jpg" alt="Lemon Tea">
+                <h3>Softdrinks</h3>
+            </div>
+            <div class="menu-item" onclick="openModal('Cold Lemon Tea', '₹ 20', 'coldlemontea.jpg')">
+                <img src="hotitems.jpg" alt="Cold Lemon Tea">
+                <h3>Hot items</h3>
+            </div>
+            <div class="menu-item" onclick="openModal('Cream Roll', '₹ 10', 'creamroll.jpg')">
+                <img src="fruitjuice.jpg" alt="Cream Roll">
+                <h3>Fruit juice</h3>
+            </div>
+            <div class="menu-item" onclick="openModal('Cookies', '₹ 5', 'cookies.jpg')">
+                <img src="milkshakes.jpg" alt="Cookies">
+                <h3>Milk Shakes</h3>
+            
+            </div>
+        </div>
+        <div id="menuModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="modalTitle">Item Title</h2>
+                <p id="modalPrice">₹0</p>
+                <img id="modalImage" src="" alt="Item Image">
+            </div>
+        </div>
+        <div id="cartModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeCart()">&times;</span>
+                <h2>Your Cart</h2>
+                <div id="cartItems"></div>
+                <h3>Total:₹ <span id="totalPrice">0</span></h3>
+                <button onclick="checkout()" class="cta-button">Checkout</button>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
